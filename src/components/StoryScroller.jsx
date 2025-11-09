@@ -23,7 +23,12 @@ const StoryScroller = () => {
 
   return (
     <section className="relative py-24 px-6 sm:px-10">
-      <div className="pointer-events-none absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-white/30 via-white/10 to-transparent" style={{ height: progress }} />
+      {/* Progress indicator bound to scroll, non-interactive */}
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute left-0 top-0 w-1 bg-gradient-to-b from-white/30 via-white/10 to-transparent"
+        style={{ height: progress }}
+      />
       <div className="max-w-3xl mx-auto space-y-6">
         <StoryBlock index={1} title="A Note in the Glass" copy="You tilt the card and the light bends; a hidden sentence swims into focus. It reads like a memory you haven’t had yet." />
         <StoryBlock index={2} title="Frictionless Echoes" copy="Every interaction ripples outward—hover, drag, tap—an ecosystem of tiny signals composing a larger song." />
